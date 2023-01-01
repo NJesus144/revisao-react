@@ -19,11 +19,10 @@ const ButtonContainer = styled.div`
   }
 `
 
-export default function Button() {
+export default function Button(props) {
   return (
     <ButtonContainer>
-      <label>Button Label</label>
-      <button>Button text</button>
+      <button {...props}>{props.children}</button>
     </ButtonContainer>
   )
 }

@@ -4,13 +4,12 @@ export default function DebouncePage() {
   const debounce = useRef(null)
   const [text, setText] = useState('')
 
-  const searchData = () => {
-    if (!text) return
-    console.log('... searching data ...')
-    console.log(text)
-  }
-
   useEffect(() => {
+    const searchData = () => {
+      if (!text) return
+      console.log('... searching data ...')
+      console.log(text)
+    }
     if (debounce.current) clearInterval(debounce.current)
 
     debounce.current = setTimeout(searchData, 1000)
